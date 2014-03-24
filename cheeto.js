@@ -10,16 +10,6 @@ var tlds = require('fs').readFileSync(__dirname+'/tlds.txt', 'utf8').split('\n')
 
 // command line argument handling
 if(process.argv.length > 2) {
-<<<<<<< HEAD
-	var tld = new tld()
-	if(process.argv[2] === 'update') {
-		tld.update()
-	} else if(process.argv[2] === 'list') {
-		tld.list()
-	} else if(process.argv[2].length === 1) {
-		tld.filter(process.argv[2]) 
-	}
-=======
   var tld = new tld()
   if(process.argv[2] === 'update') {
     tld.update()
@@ -28,7 +18,6 @@ if(process.argv.length > 2) {
   } else if(process.argv[2].length === 1) {
     tld.filter(process.argv[2]) 
   }
->>>>>>> 871bdaf19a7085ade6efe528057de65e092fc864
 }
 
 // tld constructor
@@ -76,49 +65,49 @@ function tld() {
     }
     return results
   }
-	this.update = function() {
-		request(tlds_url, function(err, res, body) {
-			if(err) throw err
-			body = body.split('\n')
-			body.pop()
-			var numTlds = body.length - 2 // first and last elements (non-tlds)
-			body = body.join('\n')
-			fs.writeFile('tlds.txt', body.toLowerCase(), function(err) {
-				if(err) throw err
-				console.log('file'.green+' '+'tlds.txt'.underline+' updated')
-				console.log('tlds'.green+' '+numTlds)
-				console.log('src'.green+'  '+tlds_url)
-			})
-		})
+  this.update = function() {
+    request(tlds_url, function(err, res, body) {
+      if(err) throw err
+      body = body.split('\n')
+      body.pop()
+      var numTlds = body.length - 2 // first and last elements (non-tlds)
+      body = body.join('\n')
+      fs.writeFile('tlds.txt', body.toLowerCase(), function(err) {
+	if(err) throw err
+	console.log('file'.green+' '+'tlds.txt'.underline+' updated')
+	console.log('tlds'.green+' '+numTlds)
+	console.log('src'.green+'  '+tlds_url)
+      })
+    })
+  }
+  this.list = function() {
+    var strm = fs.createReadStream(__dirname+'/tlds.txt')
+    var tlds = ''
+    strm.on('data', function(d) {
+      tlds += d
+    })
+    strm.on('end', function() {
+      tlds = tlds.split('\n')
+      tlds.shift()
+      for(var i in tlds) {
+	if(tlds[i].charAt(0) !== 'y') {
+	  tlds[i] = tlds[i][utils.abcColor(tlds[i].charAt(0))]	
 	}
-	this.list = function() {
-		var strm = fs.createReadStream(__dirname+'/tlds.txt')
-		var tlds = ''
-		strm.on('data', function(d) {
-			tlds += d
-		})
-		strm.on('end', function() {
-			tlds = tlds.split('\n')
-			tlds.shift()
-			for(var i in tlds) {
-				if(tlds[i].charAt(0) !== 'y') {
-					tlds[i] = tlds[i][utils.abcColor(tlds[i].charAt(0))]	
-				}
-			}
-			tlds = tlds.join('\n')
-			console.log(tlds)
-		})
-	}
-	this.filter = function(ch) {
-		var results = []
-		var clr = utils.randomColor()
-		for(var i in tlds) {
-			if(ch === tlds[i].charAt(0)) {
-				results.push(tlds[i][clr])
-			} 
-		}
-		console.log(results.join('\n'))
-	}
+      }
+      tlds = tlds.join('\n')
+      console.log(tlds)
+    })
+  }
+  this.filter = function(ch) {
+    var results = []
+    var clr = utils.randomColor()
+    for(var i in tlds) {
+      if(ch === tlds[i].charAt(0)) {
+        results.push(tlds[i][clr])
+      } 
+    }
+    console.log(results.join('\n'))
+  }
 }
 
 exports.tld = tld
