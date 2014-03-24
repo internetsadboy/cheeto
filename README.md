@@ -22,5 +22,5 @@ console.log(cheeto.isValid(['is','http://nodejs.org','http://beepboop.net','crop
 # command line
 <code>cheeto list</code> will *return* all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized *tlds*
 
-![](./images/cheeto-list-1.png?raw=true) *same paragraph*
+![](./images/cheeto-list-1.png?raw=true) </br>
 ![](./images/cheeto-list-2.png?raw=true)
