@@ -9,3 +9,12 @@
 # installation
 
     npm install cheeto
+
+# usage
+
+```javascript
+var tld = require('./cheeto').tld() 
+console.log(tld.get('http://npmjs.org')) // org
+console.log(tld.isValid('http://nodeschool.io')) // true
+console.log(tld.isValid(['is','http://nodejs.org','http://beepboop.net','cropdust'])) // [1,1,1,0]
+```
