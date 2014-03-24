@@ -1,0 +1,5 @@
+var tld = require('./cheeto').tld()
+console.log(tld.get('http://npmjs.org'))
+console.log(tld.isValid(['is','http://nodejs.org','http://beepboop.net','cropdust']))
+console.log(tld.isValid('mean'))
+console.log(tld.isValid('http://nodeschool.io'))
