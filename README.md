@@ -21,5 +21,9 @@ console.log(tld.isValid(['is','http://nodejs.org','http://beepboop.net','cropdus
 
 # command line
 
-'cheeto list' 
+    cheeto list 
 ![](./images/cheeto-list-a.png?raw=true)
+.
+.
+.
+![](./images/cheeto-list-z.png?raw=true)
