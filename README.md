@@ -16,7 +16,7 @@
 var cheeto = require('./cheeto').cheeto() 
 console.log(cheeto.get('http://npmjs.org')) // org
 console.log(cheeto.isValid('http://nodeschool.io')) // true
-console.log(cheeto.isValid(['is','http://nodejs.org','http://beepboop.net','cropdust'])) // [1,1,1,0]
+console.log(cheeto.isValid(['is','http://heroku.com','http://ghost.net','cropdust'])) // [1,1,1,0]
 ```
 
 # command line
