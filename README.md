@@ -20,7 +20,7 @@ console.log(tld.isValid(['is','http://nodejs.org','http://beepboop.net','cropdus
 ```
 
 # command line
-
+cheeto list is global and will return all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized tlds
     cheeto list 
 ![](./images/cheeto-list-a1.png?raw=true)
 .
