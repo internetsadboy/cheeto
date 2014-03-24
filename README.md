@@ -23,8 +23,8 @@ console.log(tld.isValid(['is','http://nodejs.org','http://beepboop.net','cropdus
 cheeto list is global and will *return* all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized *tlds*
 
     cheeto list 
-![](./images/cheeto-list-a1.png?raw=true)
+![](./images/cheeto-list-1.png?raw=true)
 .
 .
 .
-![](./images/cheeto-list-z.png?raw=true)
+![](./images/cheeto-list-2.png?raw=true)
