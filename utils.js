@@ -3,8 +3,8 @@ exports.randomColor = function() {
   return color[Math.floor((Math.random()*color.length))];
 }
 		
-exports.alphaColors = function(tld) {
-	var abcs = {
+exports.abcColor = function(ch) {
+	var abc = {
 		'a':'magenta',
 		'b':'yellow',
 		'c':'green',
@@ -32,6 +32,6 @@ exports.alphaColors = function(tld) {
 		'y':'greyBG',
 		'z':'cyan'
 	}
-	return abcs[tld]
+	return abc[ch]
 }
 

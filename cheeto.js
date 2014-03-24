@@ -17,6 +17,7 @@ if(process.argv.length > 2) {
 		tld.list()
 	} else if(process.argv[2].length === 1) {
 		tld.filter(process.argv[2]) 
+	}
 }
 
 // tld constructor
@@ -90,7 +91,7 @@ function tld() {
 			tlds.shift()
 			for(var i in tlds) {
 				if(tlds[i].charAt(0) !== 'y') {
-					tlds[i] = tlds[i][utils.alphaColors(tlds[i].charAt(0))]	
+					tlds[i] = tlds[i][utils.abcColor(tlds[i].charAt(0))]	
 				}
 			}
 			tlds = tlds.join('\n')
