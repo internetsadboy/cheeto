@@ -24,4 +24,4 @@ console.log(cheeto.isValid(['is','http://nodejs.org','http://beepboop.net','crop
 
 <code>cheeto char</code> will **return** all tlds that start with **char** -- e.g. <code>char d</code> returns all tlds that start with 'd'
 
-<code>cheeto update</code> will crawl [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) servers and add any new tlds. It also logs some relevant data to the console.
+<code>cheeto update</code> will **crawl** [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) servers and **add** any new tlds. It also logs some relevant data to the console.
