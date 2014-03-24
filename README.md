@@ -22,7 +22,7 @@ console.log(tld.isValid(['is','http://nodejs.org','http://beepboop.net','cropdus
 # command line
 
     cheeto list 
-![](./images/cheeto-list-a.png?raw=true)
+![](./images/cheeto-list-a1.png?raw=true)
 .
 .
 .
