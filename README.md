@@ -22,5 +22,5 @@ console.log(cheeto.isValid(['is','http://nodejs.org','http://beepboop.net','crop
 # command line
 <code>cheeto list</code> will *return* all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized *tlds*
 
-<code>cheeto char</code> will *return* all tlds that start with *char*    
+<code>cheeto char</code> will *return* all tlds that start with *char* -- e.g. char d returns all tlds that start with 'd'
 
