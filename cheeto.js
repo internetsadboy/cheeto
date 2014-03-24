@@ -8,7 +8,7 @@ var tlds = require('fs').readFileSync(__dirname+'/tlds.txt', 'utf8').split('\n')
   , utils = require('./utils')
   , fs = require('fs')
 
-// command line argument handling
+// command line args handling
 if(process.argv.length > 2) {
   var tld = new tld()
   if(process.argv[2] === 'update') {
@@ -22,7 +22,7 @@ if(process.argv.length > 2) {
 
 // tld constructor
 // get returns tld of a url or [urls]
-// isValid returns boolean that indicates if tld(s) exist
+// isValid returns boolean that indicates if tld(s) exists
 // update crawls icann.org and updates 'tlds.txt'
 // list logs tlds to console (cssified)
 // filter logs tlds that match the char arg
