@@ -1,16 +1,30 @@
 #! /usr/bin/env node
 
-var tlds = require('fs').readFileSync('./tlds.txt', 'utf8').split('\n')
+var tlds = require('fs').readFileSync(__dirname+'/tlds.txt', 'utf8').split('\n')
 	, tlds_url = 'http://data.iana.org/TLD/tlds-alpha-by-domain.txt'
 	, parse = require('url').parse
+	, colors = require('colors')
 	, request = require('request')
+	, utils = require('./utils')
 	, fs = require('fs')
 
-if(process.argv[2] === 'update') {
+// command line argument handling
+if(process.argv.length > 2) {
 	var tld = new tld()
-	tld.update()
+	if(process.argv[2] === 'update') {
+		tld.update()
+	} else if(process.argv[2] === 'list') {
+		tld.list()
+	} else if(process.argv[2].length === 1) {
+		tld.filter(process.argv[2]) 
 }
 
+// tld constructor
+// get returns tld of a url or [urls]
+// isValid returns boolean that indicates if tld(s) exist
+// update crawls icann.org and updates 'tlds.txt'
+// list logs tlds to console (cssified)
+// filter logs tlds that match the char arg
 function tld() {
 	if(!(this instanceof tld)) return new tld()
 	this.get = function(url) {
@@ -55,14 +69,43 @@ function tld() {
 			if(err) throw err
 			body = body.split('\n')
 			body.pop()
-			var numTlds = body.length - 1
+			var numTlds = body.length - 2 // first and last elements (non-tlds)
 			body = body.join('\n')
 			fs.writeFile('tlds.txt', body.toLowerCase(), function(err) {
 				if(err) throw err
-				console.log('tlds.txt updated')
-				console.log(numTlds+' tlds')
+				console.log('file'.green+' '+'tlds.txt'.underline+' updated')
+				console.log('tlds'.green+' '+numTlds)
+				console.log('src'.green+'  '+tlds_url)
 			})
 		})
+	}
+	this.list = function() {
+		var strm = fs.createReadStream(__dirname+'/tlds.txt')
+		var tlds = ''
+		strm.on('data', function(d) {
+			tlds += d
+		})
+		strm.on('end', function() {
+			tlds = tlds.split('\n')
+			tlds.shift()
+			for(var i in tlds) {
+				if(tlds[i].charAt(0) !== 'y') {
+					tlds[i] = tlds[i][utils.alphaColors(tlds[i].charAt(0))]	
+				}
+			}
+			tlds = tlds.join('\n')
+			console.log(tlds)
+		})
+	}
+	this.filter = function(ch) {
+		var results = []
+		var clr = utils.randomColor()
+		for(var i in tlds) {
+			if(ch === tlds[i].charAt(0)) {
+				results.push(tlds[i][clr])
+			} 
+		}
+		console.log(results.join('\n'))
 	}
 }
 

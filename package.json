@@ -1,0 +1,39 @@
+{
+  "name": "cheeto",
+  "version": "0.0.1",
+  "description": "top level domain bot that returns and or validates url tlds -- command line utility as well",
+  "main": "cheeto.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghostsnstuff/cheeto.git"
+  },
+  "keywords": [
+    "url",
+    "top",
+    "level",
+    "domain",
+    "top-level-domain",
+    "tld",
+    "command line"
+  ],
+  "dependencies": {
+    "request":"*",
+    "colors":"*"
+  },
+  "author": "Jared Halpert <@ghostsnstuff>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghostsnstuff/cheeto/issues"
+  },
+  "preferGlobal":"true",
+  "bin": {
+    "cheeto":"cheeto.js"
+  },
+  "homepage": "https://github.com/ghostsnstuff/cheeto"
+}
