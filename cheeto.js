@@ -10,24 +10,24 @@ var tlds = require('fs').readFileSync(__dirname+'/tlds.txt', 'utf8').split('\n')
 
 // command line args handling
 if(process.argv.length > 2) {
-  var tld = new tld()
+  var cheeto = new cheeto()
   if(process.argv[2] === 'update') {
-    tld.update()
+    cheeto.update()
   } else if(process.argv[2] === 'list') {	
-    tld.list()
+    cheeto.list()
   } else if(process.argv[2].length === 1) {
-    tld.filter(process.argv[2]) 
+    cheeto.filter(process.argv[2]) 
   }
 }
 
-// tld constructor
+// cheeto constructor
 // get returns tld of a url or [urls]
 // isValid returns boolean that indicates if tld(s) exists
 // update crawls icann.org and updates 'tlds.txt'
 // list logs tlds to console (cssified)
 // filter logs tlds that match the char arg
-function tld() {
-  if(!(this instanceof tld)) return new tld()
+function cheeto() {
+  if(!(this instanceof cheeto)) return new cheeto()
   this.get = function(url) {
     if(typeof url !== 'object') {
       return parse(url).host.split('.')[1]	
@@ -70,7 +70,7 @@ function tld() {
       if(err) throw err
       body = body.split('\n')
       body.pop()
-      var numTlds = body.length - 2 // first and last elements (non-tlds)
+      var numTlds = body.length - 1 // first element (non-tld)
       body = body.join('\n')
       fs.writeFile('tlds.txt', body.toLowerCase(), function(err) {
 	if(err) throw err
@@ -110,4 +110,4 @@ function tld() {
   }
 }
 
-exports.tld = tld
+exports.cheeto = cheeto
