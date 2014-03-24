@@ -24,7 +24,5 @@ cheeto list is global and will *return* all [icann.org](http://data.iana.org/TLD
 
     cheeto list 
 ![](./images/cheeto-list-1.png?raw=true)
-.
-.
-.
+
 ![](./images/cheeto-list-2.png?raw=true)
