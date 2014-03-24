@@ -28,4 +28,4 @@ console.log(cheeto.isValid(['is','http://nodejs.org','http://beepboop.net','crop
 
 <code>cheeto char</code> will *return* all tlds that start with *char*    
 
-![](./images/cheeto-char.png?raw=true)
+![](./images/cheeto-ch.png?raw=true)
