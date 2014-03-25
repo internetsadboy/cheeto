@@ -20,8 +20,8 @@ console.log(cheeto.isValid(['is','http://heroku.com','http://ghost.net','cropdus
 ```
 
 # command line
-<code>cheeto list</code> will **return** all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized **tlds**
+<code>cheeto list</code> will return all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized tlds
 
-<code>cheeto char</code> will **return** all tlds that *start* with **char** e.g. <code>char d</code> returns all tlds that *start* with 'd'
+<code>cheeto char</code> will return all tlds that start with char e.g. <code>char d</code> returns all tlds that *start* with 'd'
 
-<code>cheeto update</code> will **crawl** [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) and **add** any *new* tlds. It also **logs** some relevant data to the console.
+<code>cheeto update</code> will crawl [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) and add any *new* tlds. It also logs some relevant data to the console.
