@@ -3,7 +3,7 @@
 1. returns and or validates top level domains
 2. command line utility that lists and filters [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) tlds alphabetically
 
-![](./cheetos-pusheen.gif?raw=true)
+![](./images/cheetos-pusheen.gif?raw=true)
 
 
 # installation
@@ -42,8 +42,12 @@ checks if the array of tlds are recognized by [icann.org](http://data.iana.org/T
 
 
 # command line
-<code>cheeto list</code> will **return** all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized **tlds**
+<code>cheeto list</code> will return all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized tlds
 
-<code>cheeto char</code> will **return** all tlds that start with **char** -- e.g. <code>char d</code> returns all tlds that start with 'd'
+<code>cheeto char</code> will return all tlds that start with char e.g. <code>char d</code> returns all tlds that *start* with 'd'
 
+<<<<<<< HEAD
 <code>cheeto update</code> will **crawl** [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) servers and **add** any new tlds. It also **logs** some relevant data to the console.
+=======
+<code>cheeto update</code> will crawl [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) and add any *new* tlds. It also logs some relevant data to the console.
+>>>>>>> 23b037fcea6098f76fc0cd355ed102df93f86cf8
