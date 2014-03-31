@@ -72,7 +72,7 @@ function cheeto() {
       body.pop()
       var numTlds = body.length - 1 // first element (non-tld)
       body = body.join('\n')
-      fs.writeFile('tlds.txt', body.toLowerCase(), function(err) {
+      fs.writeFile(__dirname+'/tlds.txt', body.toLowerCase(), function(err) {
 	if(err) throw err
 	console.log('file'.green+' '+'tlds.txt'.underline+' updated')
 	console.log('tlds'.green+' '+numTlds)

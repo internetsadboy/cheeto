@@ -10,14 +10,36 @@
 
     npm install cheeto
 
-# usage
+# example
 
 ```javascript
 var cheeto = require('./cheeto').cheeto() 
-console.log(cheeto.get('http://npmjs.org')) // org
+console.log(cheeto.get('http://npmjs.org')) => org
+
 console.log(cheeto.isValid('http://nodeschool.io')) // true
 console.log(cheeto.isValid(['is','http://heroku.com','http://ghost.net','cropdust'])) // [1,1,1,0]
 ```
+
+## get(string)
+returns the corresponding tld string
+
+<code>console.log(cheeto.get('http://npmjs.org')) => org</code>
+
+## get([string, string])
+returns an array of corresponding tlds 
+
+<code>console.log(cheeto.get(['https://google.com', 'http://healthcare.gov'])) => ['com', 'gov']</code>
+
+## isValid(string)
+checks if the tld is recognized by [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt)
+
+<code>console.log(cheeto.isValid('http://nodeschool.io')) => true</code>
+
+## isValid([string, string])
+checks if the array of tlds are recognized by [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt)
+
+<code>console.log(cheeto.isValid(['http://heroku.com','net', 'cropdust'])) => [1,1,0]</code>
+
 
 # command line
 <code>cheeto list</code> will **return** all [icann.org](http://data.iana.org/TLD/tlds-alpha-by-domain.txt) recognized **tlds**

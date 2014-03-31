@@ -1,6 +1,6 @@
 {
   "name": "cheeto",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "top level domain bot that returns and or validates url tlds -- command line utility as well",
   "main": "cheeto.js",
   "directories": {
